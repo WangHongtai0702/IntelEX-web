@@ -1,0 +1,23 @@
+{
+    "ttps": [
+        {
+            "technique": "Phishing",
+            "reason": "The report mentions spear phishing as a technique used for initial compromise, which is a specific form of phishing.",
+            "procedure": [
+                "1. Spear phishing emails target specific individuals within the organization.",
+                "2. Spear phishing emails contain malicious attachments.",
+                "3. Spear phishing emails include hyperlinks to malicious files.",
+                "4. Malicious attachments serve as entry points for the attacker.",
+                "5. Hyperlinks direct the recipient to download or execute harmful content.",
+                "6. Malicious payloads facilitate the compromise of the target's network.",
+                "7. The attacker crafts spear phishing emails to appear legitimate.",
+                "8. The interaction with malicious content leads to unauthorized access."
+            ],
+            "tactic": "Initial Access",
+            "entity": [
+                "spear phishing",
+                "APT1"
+            ]
+        }
+    ]
+}
