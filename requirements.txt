@@ -12,3 +12,4 @@ pyvis~=0.3.2
 pySigma
 pySigma-backend-elasticsearch~=1.1.2
 pySigma-backend-splunk~=1.1.0
+pyparsing~=3.1.2
