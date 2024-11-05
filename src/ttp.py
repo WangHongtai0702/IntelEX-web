@@ -1,4 +1,5 @@
 import os
+import sys
 
 import openai
 import json
@@ -388,7 +389,7 @@ def get_tactic_by_technique(technique):
 
 
 def query_graphrag(query):
-    cmd = ["python", "-m", "graphrag.query", "--root", ".", "--method", "local", shlex.quote(query)]
+    cmd = [f"{sys.executable}", "-m", "graphrag.query", "--root", ".", "--method", "local", shlex.quote(query)]
 
     result = subprocess.run(cmd, capture_output=True, text=True, check=True)
     output = result.stdout

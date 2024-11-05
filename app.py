@@ -9,7 +9,6 @@ import os
 import nltk
 
 st.set_page_config(layout="wide")
-nltk.download('punkt')
 
 
 def page_ttp(if_demo: bool = False):
