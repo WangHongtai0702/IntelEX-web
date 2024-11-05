@@ -32,7 +32,7 @@ def save_to_vector_store():
 
 def rag_search(prompt):
     EMBEDDINGS = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
-    vector_store = FAISS.load_local('vector_db/techniques', embeddings=EMBEDDINGS)
+    vector_store = FAISS.load_local('vector_db/techniques', embeddings=EMBEDDINGS, allow_dangerous_deserialization=True)
     docs = vector_store.similarity_search_with_score(prompt, k=3)  # 计算相似度，并把相似度高的chunk放在前面
     knowledge = [doc[0].page_content for doc in docs]  # 提取chunk的文本内容
     # logging.info(f'Knowledge: {knowledge}')
