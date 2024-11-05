@@ -15,7 +15,7 @@ from nltk.tokenize import sent_tokenize
 from src.rag import rag_search
 
 load_dotenv()
-nltk.download('punkt')
+
 
 # os.environ["MODEL_NAME"] = 'ft:gpt-4o-mini-2024-07-18:personal::A4MXr8Ap'
 # os.environ["MODEL_NAME"] = 'o1-mini'
