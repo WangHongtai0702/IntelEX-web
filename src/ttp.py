@@ -7,11 +7,11 @@ import subprocess
 import logging
 import time
 import nltk
+import re
 import pandas as pd
 from dotenv import load_dotenv
 from pprint import pprint
 from src.data import TACTIC_TECHNIQUES_MAPPING, TACTIC_DESCRIPTION
-from nltk.tokenize import sent_tokenize
 from src.rag import rag_search
 
 load_dotenv()
@@ -286,6 +286,12 @@ def analyse_procedure(entire_report, technique):
         response_format={"type": "json_object"}
     )
     return graphrag_response, json.loads(response.choices[0].message.content)
+
+
+def sent_tokenize(text) -> list:
+    # 使用正则表达式匹配句子的结束标点，并保持标点符号
+    sentences = re.split(r'(?<=[.!?]) +', text)
+    return sentences
 
 
 # only analyse tactic and technique
