@@ -1,6 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from ttp import analyse_procedure, query_graphrag, analyse_ttp
+from src.ttp import analyse_procedure, query_graphrag, analyse_ttp
 from src.rule import generate_rules
 from src.utils import draw_ttp_tree
 import random
