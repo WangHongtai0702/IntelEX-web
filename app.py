@@ -44,7 +44,7 @@ def page_ttp(if_demo: bool = False, if_procedure: bool = False):
                 procedures_html = "<br>".join([f"&bull; {proc}" for proc in ttp['procedure']])
                 st.markdown(f"""
                         <div style="background-color: #fffdee; padding: 15px; margin-bottom: 15px; 
-                                    border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                    border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); color:black;">
                             <p style="margin: 0;"><strong>Tactic:</strong> {ttp['tactic']}</p>
                             <p style="margin: 0;"><strong>Technique:</strong> {ttp['technique']}</p>
                             <p style="margin: 0;"><strong>Procedure:</strong> <br>{procedures_html}</p>
