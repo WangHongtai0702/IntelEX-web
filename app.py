@@ -11,7 +11,7 @@ import nltk
 st.set_page_config(layout="wide")
 
 
-def page_ttp(if_demo: bool = False):
+def page_ttp(if_demo: bool = False, if_procedure: bool = False):
     if 'ttp_results' not in st.session_state:
         st.session_state.ttp_results = None
     if 'rules_results' not in st.session_state:
@@ -30,7 +30,7 @@ def page_ttp(if_demo: bool = False):
                 st.session_state.ttp_results = ttps['ttps']
             else:
                 # 调用分析函数
-                st.session_state.ttp_results = analyse_ttp(attack_report, True)['ttps_with_rag_with_filter']  # 保存 TTP 结果到 session_state
+                st.session_state.ttp_results = analyse_ttp(attack_report, if_procedure)['ttps_with_rag_with_filter']  # 保存 TTP 结果到 session_state
                 with open("results/demo.json", "w", encoding="utf-8") as f:
                     json.dump({'ttps': st.session_state.ttp_results}, f, ensure_ascii=False, indent=4)
     if st.session_state.ttp_results:
